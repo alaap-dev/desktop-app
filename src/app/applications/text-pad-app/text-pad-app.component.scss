@@ -2,8 +2,10 @@
     display: flex; // Allows textpad-container to grow
     flex-direction: column;
     height: 100%; // Fill the window-body
-    background-color: var(--textpad-bg, #ffffff); // Default white background
-    color: var(--textpad-text-color, #000000); // Default black text
+    // background-color: var(--textpad-bg, #ffffff); // Default white background
+    background-color: var(--textpad-bg); // Default white background
+    // color: var(--textpad-text-color, #000000); // Default black text
+    color: var(--textpad-text-color); // Default black text
     font-family: var(--font-family-base); // Or a specific editor font
 }
 
@@ -11,14 +13,16 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: hidden; // Important
+    // overflow: hidden; note01-overflow-hidden // Important
 }
 
 .textpad-menubar {
     // Placeholder for future
     padding: 5px;
-    background-color: var(--textpad-menubar-bg, #f0f0f0);
-    border-bottom: 1px solid var(--textpad-border-color, #cccccc);
+    // background-color: var(--textpad-menubar-bg, #f0f0f0);
+    background-color: var(--textpad-menubar-bg);
+    // border-bottom: 1px solid var(--textpad-border-color, #cccccc);
+    border-bottom: 1px solid var(--textpad-border-color);
     font-size: 0.9em;
     flex-shrink: 0;
 }
@@ -26,20 +30,26 @@
 .textpad-content-area {
     flex-grow: 1;
     overflow-y: auto; // Enable scrolling for content
-    padding: var(--spacing-unit, 8px);
-    font-size: var(--font-size-md, 1rem); // Base font size for content
+    // padding: var(--spacing-unit, 8px);
+    padding: var(--spacing-unit);
+    // font-size: var(--font-size-md, 1rem); // Base font size for content
+    font-size: var(--font-size-md); // Base font size for content
 }
 
 .status-message {
     padding: 20px;
     text-align: center;
     font-style: italic;
-    color: var(--textpad-status-text-color, #555555);
+    // color: var(--textpad-status-text-color, #555555);
+    color: var(--textpad-status-text-color);
 
     &.error {
-        color: var(--textpad-error-text-color, #D8000C); // Error red
-        background-color: var(--textpad-error-bg, #FFD2D2); // Light red background
-        border: 1px solid var(--textpad-error-border-color, #D8000C);
+        // color: var(--textpad-error-text-color, #D8000C); // Error red
+        color: var(--textpad-error-text-color); // Error red
+        // background-color: var(--textpad-error-bg, #FFD2D2); // Light red background
+        background-color: var(--textpad-error-bg); // Light red background
+        // border: 1px solid var(--textpad-error-border-color, #D8000C);
+        border: 1px solid var(--textpad-error-border-color);
         border-radius: 3px;
     }
 }
@@ -55,7 +65,8 @@
     /* Opera 7 */
     word-wrap: break-word;
     /* Internet Explorer 5.5+ */
-    font-family: var(--font-family-monospace, 'Courier New', Courier, monospace); // Specific monospace
+    // font-family: var(--font-family-monospace, 'Courier New', Courier, monospace); // Specific monospace
+    font-family: var(--font-family-monospace); // Specific monospace
     line-height: 1.4;
 }
 
@@ -69,8 +80,10 @@
     h4,
     h5,
     h6 {
-        font-family: var(--font-family-heading, 'Press Start 2P'); // Or a sans-serif
-        color: var(--textpad-header-color, #333333);
+        // font-family: var(--font-family-heading, 'Press Start 2P'); // Or a sans-serif
+        font-family: var(--font-family-heading); // Or a sans-serif
+        // color: var(--textpad-header-color, #333333);
+        color: var(--textpad-header-color);
         margin-top: 1.2em;
         margin-bottom: 0.6em;
     }
@@ -81,10 +94,12 @@
     }
 
     code {
-        background-color: var(--textpad-code-bg, #f0f0f0);
+        // background-color: var(--textpad-code-bg, #f0f0f0);
+        background-color: var(--textpad-code-bg);
         padding: 0.2em 0.4em;
         border-radius: 3px;
-        font-family: var(--font-family-monospace, 'Courier New', Courier, monospace);
+        // font-family: var(--font-family-monospace, 'Courier New', Courier, monospace);
+        font-family: var(--font-family-monospace);
     }
 
     pre code {
@@ -100,10 +115,12 @@
     }
 
     blockquote {
-        border-left: 3px solid var(--textpad-quote-border, #cccccc);
+        // border-left: 3px solid var(--textpad-quote-border, #cccccc);
+        border-left: 3px solid var(--textpad-quote-border);
         padding-left: 1em;
         margin-left: 0;
-        color: var(--textpad-quote-text, #555555);
+        // color: var(--textpad-quote-text, #555555);
+        color: var(--textpad-quote-text);
         font-style: italic;
     }
 }
@@ -111,10 +128,13 @@
 .textpad-statusbar {
     // Placeholder for future
     padding: 5px;
-    background-color: var(--textpad-menubar-bg, #f0f0f0);
-    border-top: 1px solid var(--textpad-border-color, #cccccc);
+    // background-color: var(--textpad-menubar-bg, #f0f0f0);
+    background-color: var(--textpad-menubar-bg);
+    // border-top: 1px solid var(--textpad-border-color, #cccccc);
+    border-top: 1px solid var(--textpad-border-color);
     font-size: 0.8em;
-    color: var(--textpad-status-text-color, #555555);
+    // color: var(--textpad-status-text-color, #555555);
+    color: var(--textpad-status-text-color);
     flex-shrink: 0;
     text-align: right;
 }

@@ -3,13 +3,14 @@
     width: 100%;
     height: 100%; // Make it fill its container (e.g., desktop-environment component)
     position: relative; // Crucial for absolute positioning of windows
-    overflow: hidden; // Prevent windows from making desktop scroll
+    // overflow: hidden; note01-overflow-hidden // Prevent windows from making desktop scroll
 }
 
 .desktop-surface {
     width: 100%;
     height: 100%;
-    background-color: var(--color-background-desktop, #0d0d25); // Your desktop bg
+    // background-color: var(--color-background-desktop, #0d0d25); // Your desktop bg
+    background-color: var(--color-background-desktop); // Your desktop bg
     // Add background image or grid patterns here if desired
     // background-image: url('/assets/images/your-desktop-bg.png');
     background-size: cover;
@@ -31,8 +32,10 @@
 
     &:hover,
     &:focus {
-        background-color: rgba(var(--color-text-accent-cyan-rgb, 0, 255, 255), 0.15);
-        border-color: var(--color-border-window-active, #00ffff);
+        // background-color: rgba(var(--color-text-accent-cyan-rgb, 0, 255, 255), 0.15);
+        background-color: rgba(var(--color-text-accent-cyan-rgb), 0.15);
+        // border-color: var(--color-border-window-active, #00ffff);
+        border-color: var(--color-border-window-active);
         outline: none;
     }
 }
@@ -46,13 +49,14 @@
 
 .desktop-item-name {
     font-size: 0.75rem;
-    color: var(--color-text-primary, #fff);
+    // color: var(--color-text-primary, #fff);
+    color: var(--color-text-primary);
     // Simple text shadow for readability on various backgrounds
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     word-break: break-word;
     max-height: 2.4em;
     /* Approx 2 lines */
-    overflow: hidden;
+    // overflow: hidden; note01-overflow-hidden
 }
 
 app-window-frame.minimized-window-hidden {

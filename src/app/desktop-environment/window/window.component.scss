@@ -7,36 +7,47 @@
 }
 
 .os-window-frame {
-    background-color: var(--color-background-window, #2c2c4a);
-    border: 2px solid var(--color-border-window, #ff00ff);
-    color: var(--color-text-primary, #fff);
-    box-shadow: 3px 3px 0px 0px var(--color-border-window, #ff00ff);
+    // background-color: var(--color-background-window, #2c2c4a);
+    background-color: var(--color-background-window);
+    // border: 2px solid var(--color-border-window, #ff00ff);
+    border: 2px solid var(--color-border-window);
+    // color: var(--color-text-primary, #fff);
+    color: var(--color-text-primary);
+    // box-shadow: 3px 3px 0px 0px var(--color-border-window, #ff00ff);
+    box-shadow: 3px 3px 0px 0px var(--color-border-window);
     display: flex;
     flex-direction: column;
     width: 100%; // Fill the host element
     height: 100%; // Fill the host element
-    overflow: hidden; // Important for dynamic content
+    // overflow: hidden; note01-overflow-hidden // Important for dynamic content
 
     &.minimized {
         display: none; // Or animate to taskbar - for now, just hide
     }
 
     &.active {
-        border-color: var(--color-border-window-active, #00ffff); // Example active border
-        box-shadow: 3px 3px 0px 0px var(--color-border-window-active, #00ffff);
+        // border-color: var(--color-border-window-active, #00ffff); // Example active border
+        border-color: var(--color-border-window-active); // Example active border
+        // box-shadow: 3px 3px 0px 0px var(--color-border-window-active, #00ffff);
+        box-shadow: 3px 3px 0px 0px var(--color-border-window-active);
 
         .title-bar {
-            background-color: var(--color-titlebar-background-active, #3a3a7e); // Example active title bar
+            // background-color: var(--color-titlebar-background-active, #3a3a7e); // Example active title bar
+            background-color: var(--color-titlebar-background-active); // Example active title bar
         }
     }
 }
 
 .title-bar {
-    background-color: var(--color-titlebar-background, #1a1a3e);
-    color: var(--color-titlebar-text, #e0e0ff);
+    // background-color: var(--color-titlebar-background, #1a1a3e);
+    background-color: var(--color-titlebar-background);
+    // color: var(--color-titlebar-text, #e0e0ff);
+    color: var(--color-titlebar-text);
     padding: 5px 8px;
-    border-bottom: 2px solid var(--color-border-window, #ff00ff);
-    font-family: var(--font-family-heading, 'Press Start 2P');
+    // border-bottom: 2px solid var(--color-border-window, #ff00ff);
+    border-bottom: 2px solid var(--color-border-window);
+    // font-family: var(--font-family-heading, 'Press Start 2P');
+    font-family: var(--font-family-heading);
     font-size: 0.8rem;
     display: flex;
     justify-content: space-between;
@@ -50,7 +61,7 @@
 
     .title {
         white-space: nowrap;
-        overflow: hidden;
+        // overflow: hidden; note01-overflow-hidden
         text-overflow: ellipsis;
         flex-grow: 1;
         padding: 0 5px;
@@ -69,12 +80,16 @@
 }
 
 .control-button {
-    background-color: var(--color-button-background, #444);
-    color: var(--color-button-text, #fff);
-    border: 1px solid var(--color-border-button, #00ffff);
+    // background-color: var(--color-button-background, #444);
+    background-color: var(--color-button-background);
+    // color: var(--color-button-text, #fff);
+    color: var(--color-button-text);
+    // border: 1px solid var(--color-border-button, #00ffff);
+    border: 1px solid var(--color-border-button);
     margin-left: 4px;
     padding: 1px 5px;
-    font-family: var(--font-family-base, 'VT323');
+    // font-family: var(--font-family-base, 'VT323');
+    font-family: var(--font-family-base);
     font-size: 0.9rem;
     cursor: pointer;
     line-height: 1.2;
@@ -86,6 +101,7 @@
     // }
 
     &.close:hover {
+        // TODO: no hard coding
         background-color: #ff3366;
     }
 }

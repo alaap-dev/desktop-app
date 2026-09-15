@@ -15,8 +15,9 @@ import { AppDefinition } from '../services/model/app-definition.model';
   styleUrls: ['./taskbar.component.scss']
 })
 export class DETaskbarComponent implements OnInit, OnDestroy { // Renamed component class
-  openWindows: AppInstance[] = [];
-  minimizedWindows: AppInstance[] = [];
+  windows: AppInstance[] = [];
+  // openWindows: AppInstance[] = [];
+  // minimizedWindows: AppInstance[] = [];
   private windowsSubscription!: Subscription;
 
   constructor(
@@ -26,8 +27,9 @@ export class DETaskbarComponent implements OnInit, OnDestroy { // Renamed compon
 
   ngOnInit(): void {
     this.windowsSubscription = this.desktopManager.windows$.subscribe(windows => {
-      this.openWindows = windows.filter(w => !w.isMinimized);
-      this.minimizedWindows = windows.filter(w => w.isMinimized);
+      this.windows = windows;
+      // this.openWindows = windows.filter(w => !w.isMinimized);
+      // this.minimizedWindows = windows.filter(w => w.isMinimized);
     });
   }
 

@@ -5,11 +5,11 @@
     <!-- <button (click)="launchTestApp()" class="start-button-placeholder">TestApp</button> -->
 
     <div class="open-window-tabs">
-        <button *ngFor="let window of openWindows.concat(minimizedWindows)" class="taskbar-tab"
+        <button *ngFor="let window of windows" class="taskbar-tab"
             [class.active]="window.isActive && !window.isMinimized" [class.minimized]="window.isMinimized"
             (click)="taskbarWindowClick(window.id)" [title]="window.title">
             <img *ngIf="getAppIcon(window.appId)" [src]="getAppIcon(window.appId)" alt="" class="tab-icon" />
-            {{ window.title }}
+            <!-- {{ window.title }} -->
         </button>
     </div>
     <!-- Clock etc. -->

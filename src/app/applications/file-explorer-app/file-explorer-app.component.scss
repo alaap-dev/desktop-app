@@ -2,7 +2,8 @@
     display: flex; // Allows file-explorer-container to grow
     flex-direction: column;
     height: 100%;
-    background-color: var(--color-window-content-bg, #2a2a4e); // Match window body
+    // background-color: var(--color-window-content-bg, #2a2a4e); // Match window body
+    background-color: var(--color-window-content-bg); // Match window body
     color: var(--color-text-primary);
     font-family: var(--font-family-base);
 }
@@ -11,15 +12,17 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden; note01-overflow-hidden
 }
 
 .address-bar {
     display: flex;
     align-items: center;
     padding: 5px 8px;
-    background-color: var(--color-titlebar-background, #1a1a3e); // Darker part
-    border-bottom: 1px solid var(--color-border-window, #ff00ff);
+    // background-color: var(--color-titlebar-background, #1a1a3e); // Darker part
+    background-color: var(--color-titlebar-background); // Darker part
+    // border-bottom: 1px solid var(--color-border-window, #ff00ff);
+    border-bottom: 1px solid var(--color-border-window);
     font-size: 0.9rem;
 
     button {
@@ -45,7 +48,7 @@
         padding: 3px 6px;
         border: 1px solid var(--color-border-button);
         flex-grow: 1;
-        overflow: hidden;
+        // overflow: hidden; note01-overflow-hidden
         text-overflow: ellipsis;
         white-space: nowrap;
     }
@@ -73,8 +76,10 @@
 
     &:hover,
     &:focus {
-        background-color: var(--color-titlebar-background-active, #3a3a7e);
-        border-color: var(--color-border-window-active, #00ffff);
+        // background-color: var(--color-titlebar-background-active, #3a3a7e);
+        background-color: var(--color-titlebar-background-active);
+        // border-color: var(--color-border-window-active, #00ffff);
+        border-color: var(--color-border-window-active);
         outline: none;
     }
 }
@@ -89,7 +94,7 @@
 .item-name {
     font-size: 0.9rem;
     white-space: nowrap;
-    overflow: hidden;
+    // overflow: hidden; note01-overflow-hidden
     text-overflow: ellipsis;
 }
 

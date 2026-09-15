@@ -1,8 +1,4 @@
-You're absolutely right, interfaces are key for maintainability and clarity, especially in a project with this many interacting parts!
-
-Let's list out the concepts, both Angular-specific and broader software/OS concepts, that are relevant or would be beneficial to understand for building and extending your Retro OS Portfolio:
-
-**I. Core Angular Concepts Utilized/Needed:**
+## I. Core Angular Concepts Utilized/Needed:
 
 1.  **Components:** The fundamental building blocks (Desktop, WindowFrame, Taskbar, individual Apps).
     *   `@Input()` and `@Output()`: For communication between parent/child components (e.g., `WindowFrameComponent` receiving `windowInstance` and emitting close requests).
@@ -46,7 +42,7 @@ Let's list out the concepts, both Angular-specific and broader software/OS conce
     *   How it impacts access to browser globals like `window` and `document`.
 14. **`ngx-markdown` (or similar):** Understanding how third-party libraries integrate, especially those that interact with `HttpClient` or render complex content.
 
-**II. Broader Software Engineering & OS Concepts (Inspiration & Application):**
+## II. Broader Software Engineering & OS Concepts (Inspiration & Application):
 
 1.  **Operating System Concepts (High-Level Inspiration):**
     *   **Window Manager:** Z-ordering, focus management, window lifecycle (create, minimize, maximize, close), window decorations.
@@ -90,13 +86,3 @@ Let's list out the concepts, both Angular-specific and broader software/OS conce
     *   Loading models, running inference, handling tensors, integrating with webcam/mic if needed.
 10. **Version Control (Git):** Essential for any project.
 11. **Modular Design & Separation of Concerns:** Breaking the system into manageable, independent (as much as possible) services and components.
-
-**Key Takeaway for Future You:**
-
-The core of this OS simulation revolves around:
-*   **Services as state managers and "system call" providers.**
-*   **`DesktopComponent` as the stage for dynamically rendered `WindowFrameComponent`s.**
-*   **Clear data models (`AppDefinition`, `WindowInstance`, `FSObject`) driving the system.**
-*   **RxJS for reactive updates and communication.**
-
-When you come back, understanding the roles of `DesktopManagerService`, `AppRegistryService`, and `FileSystemService`, and how they interact with `DesktopComponent` and `WindowFrameComponent`, will be the fastest way to get reacquainted with the project's heart. The "Core Workflows" section in the documentation will be your best friend for tracing specific actions.
