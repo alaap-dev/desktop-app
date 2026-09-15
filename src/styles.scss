@@ -28,7 +28,7 @@ body {
 :root {
   // --- COLORS (Vaporwave Inspired) ---
   // Backgrounds
-  --color-background-desktop: #1A1A2E; // Dark indigo/purple
+  --color-background-desktop: #1a1a2e; // Dark indigo/purple
   --color-background-window: #2A2A4E; // Slightly lighter for window bodies
   --color-background-taskbar: #10101E; // Very dark for taskbar
 
@@ -90,6 +90,60 @@ body {
   // background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
   //                  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   // background-size: 20px 20px; // Adjust size of grid
+}
+
+body.theme-classic-95 {
+  // Override variables here
+  --font-family-base: 'Arial', sans-serif; // Or 'MS Sans Serif' if you have it/a good web alternative
+  --font-family-heading: 'Arial', sans-serif; // Often same in older OSes
+  --font-family-monospace: 'Courier New', monospace;
+
+  // Backgrounds
+  --color-background-desktop: #008080;         // Teal
+  --color-background-window: #C0C0C0;          // Silver/Gray
+  --color-window-content-bg:  #FFFFFF;
+
+  --color-background-window-content: #FFFFFF;  // White content area
+  --color-background-titlebar: #000080;        // Navy Blue
+  --color-background-titlebar-active: #0000A0; // Slightly brighter Navy
+  --color-background-taskbar: #C0C0C0;
+  --color-background-button: #C0C0C0;          // Buttons often matched window bg
+  --color-background-button-hover: #B0B0B0;
+  --color-background-input: #FFFFFF;
+  --color-background-tooltip: #FFFFE1; // Light yellow
+
+  // Text
+  --color-text-primary: #000000;       // Black
+  --color-text-secondary: #404040;
+  --color-text-accent: #000080;        // Navy
+  --color-text-accent-cyan: #0000FF;   // Bright Blue
+  --color-text-link: #0000FF;
+  --color-text-link-hover: #000080;
+  --color-text-titlebar: #FFFFFF;      // White text on navy title bar
+  --color-text-titlebar-inactive: #C0C0C0; // Grayed out text on inactive title
+  --color-text-button: #000000;
+  --color-text-input: #000000;
+  --color-text-tooltip: #000000;
+
+
+  // Borders (Classic Windows often had more complex 3D-effect borders)
+  // For simplicity, we'll use solid for now, but you could get fancy with box-shadow for pseudo-3D
+  --os-border-window: 2px outset #C0C0C0; // Simulating 3D, or use multiple box-shadows
+  --os-border-window-active: 2px outset #C0C0C0; // Active might just be title bar change
+  --os-border-titlebar: none; // Often part of window border
+  --os-border-button: 2px outset #C0C0C0;
+  --os-border-input: 1px inset #808080;
+
+  // Shadows
+  --os-shadow-window: none; // Classic themes often didn't have drop shadows
+
+  // Taskbar Tab
+  --os-taskbar-tab-bg: #C0C0C0;
+  --os-taskbar-tab-bg-active: #A0A0A0; // Slightly darker for "pressed"
+  --os-taskbar-tab-text: #000000;
+  --os-taskbar-tab-text-active: #000000;
+  --os-taskbar-tab-border: 2px outset #C0C0C0;
+  --os-taskbar-tab-border-active: 2px inset #A0A0A0; // "Pressed in" look
 }
 
 // Basic link styling

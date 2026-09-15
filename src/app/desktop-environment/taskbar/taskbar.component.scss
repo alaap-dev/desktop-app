@@ -1,9 +1,12 @@
 :host {
     display: block;
     height: 40px; // Example height
-    background-color: var(--color-background-taskbar, #111);
-    color: var(--color-text-primary, #fff);
-    border-top: 1px solid var(--color-border-window, #ff00ff);
+    // background-color: var(--color-background-taskbar, #111);
+    background-color: var(--color-background-taskbar);
+    // color: var(--color-text-primary, #fff);
+    color: var(--color-text-primary);
+    // border-top: 1px solid var(--color-border-window, #ff00ff);
+    border-top: 1px solid var(--color-border-window);
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -19,12 +22,16 @@
 }
 
 .start-button-placeholder {
-    background-color: var(--color-titlebar-background, #333);
-    color: var(--color-titlebar-text, #fff);
-    border: 1px solid var(--color-border-button, #0ff);
+    // background-color: var(--color-titlebar-background, #333);
+    background-color: var(--color-titlebar-background);
+    // color: var(--color-titlebar-text, #fff);
+    color: var(--color-titlebar-text);
+    // border: 1px solid var(--color-border-button, #0ff);
+    border: 1px solid var(--color-border-button);
     padding: 5px 10px;
     cursor: pointer;
-    font-family: var(--font-family-heading, 'Press Start 2P');
+    // font-family: var(--font-family-heading, 'Press Start 2P');
+    font-family: var(--font-family-heading);
     font-size: 0.7rem;
     margin-right: 15px;
     height: 100%;
@@ -39,16 +46,20 @@
 }
 
 .taskbar-tab {
-    background-color: var(--color-background-window, #2c2c4a);
-    color: var(--color-text-secondary, #ccc);
-    border: 1px solid var(--color-border-window, #ff00ff);
+    // background-color: var(--color-background-window, #2c2c4a);
+    background-color: var(--color-background-window);
+    // color: var(--color-text-secondary, #ccc);
+    color: var(--color-text-secondary);
+    // border: 1px solid var(--color-border-window, #ff00ff);
+    border: 1px solid var(--color-border-window);
     border-bottom: none;
     padding: 6px 10px;
     cursor: pointer;
-    font-family: var(--font-family-base, 'VT323');
+    // font-family: var(--font-family-base, 'VT323');
+    font-family: var(--font-family-base);
     font-size: 0.8rem;
     max-width: 150px;
-    overflow: hidden;
+    // overflow: hidden; note01-overflow-hidden
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 100%;
@@ -57,9 +68,12 @@
 
 
     &.active {
-        background-color: var(--color-titlebar-background-active, #3a3a7e);
-        color: var(--color-text-primary, #fff);
-        border-color: var(--color-border-window-active, #00ffff);
+        // background-color: var(--color-titlebar-background-active, #3a3a7e);
+        background-color: var(--color-titlebar-background-active);
+        // color: var(--color-text-primary, #fff);
+        color: var(--color-text-primary);
+        // border-color: var(--color-border-window-active, #00ffff);
+        border-color: var(--color-border-window-active);
         // font-weight: bold;
     }
 
@@ -86,8 +100,10 @@
     height: 100%;
     margin-right: 15px;
     font-size: 0.7rem;
-    border: 1px solid var(--color-border-button, #0ff);
-    background-color: var(--color-background-taskbar, #111);
+    // border: 1px solid var(--color-border-button, #0ff);
+    border: 1px solid var(--color-border-button);
+    // background-color: var(--color-background-taskbar, #111);
+    background-color: var(--color-background-taskbar);
     padding: 5px 10px;
     // align-items: flex-end;
     /* Align tabs to bottom of taskbar */

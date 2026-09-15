@@ -84,7 +84,7 @@ export class DesktopComponent implements OnInit, OnDestroy {
       // Simple auto-placement for new icons
       this.desktopIconPositions.set(itemId, { x: this.nextIconX, y: this.nextIconY });
       this.nextIconY += 80; // Adjust spacing
-      // if (this.nextIconY > (window.innerHeight - 120)) { // crude wrap
+      // if (this.nextIconY > (window.innerHeight - 120)) { // crude wrap issue01-not-working
       //   this.nextIconY = 20;
       //   this.nextIconX += 100;
       // }
