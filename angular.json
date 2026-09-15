@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portfolio-angular": {
+    "desktop-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/portfolio-angular",
+            "outputPath": {
+              "base": "build",
+              "browser": ""
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -37,9 +40,8 @@
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "ssr": false,
+            "baseHref": "/desktop-app/"
           },
           "configurations": {
             "production": {
@@ -69,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "portfolio-angular:build:production"
+              "buildTarget": "desktop-app:build:production"
             },
             "development": {
-              "buildTarget": "portfolio-angular:build:development"
+              "buildTarget": "desktop-app:build:development"
             }
           },
           "defaultConfiguration": "development"

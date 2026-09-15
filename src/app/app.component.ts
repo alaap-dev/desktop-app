@@ -9,5 +9,5 @@ import { DesktopEnvironmentComponent } from "./desktop-environment/desktop-envir
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'portfolio-angular';
+  title = 'desktop-app';
 }
