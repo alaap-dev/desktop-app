@@ -60,25 +60,25 @@ export class FileSystemService {
       // /root/C:/Users/DefaultUser/Documents/TIL/202504.md
       {
         id: 'til_folder/202504.md', parentId: 'til_folder', name: '202504.md', type: 'FILE',
-        fileType: 'txt', defaultAppId: 'textPadApp',
+        fileType: 'md', defaultAppId: 'textPadApp',
         icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/202504.md'
       },
       // /root/C:/Users/DefaultUser/Documents/TIL/20250519.md
       {
         id: 'til_folder/20250519.md', parentId: 'til_folder', name: '20250519.md', type: 'FILE',
-        fileType: 'txt', defaultAppId: 'textPadApp',
+        fileType: 'md', defaultAppId: 'textPadApp',
         icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/20250519.md'
       },
       // /root/C:/Users/DefaultUser/Documents/TIL/20250606.md
       {
         id: 'til_folder/20250606.md', parentId: 'til_folder', name: '20250606.md', type: 'FILE',
-        fileType: 'txt', defaultAppId: 'textPadApp',
+        fileType: 'md', defaultAppId: 'textPadApp',
         icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/20250606.md'
       },
       // /root/C:/Users/DefaultUser/Documents/TIL/20261012.md
       {
         id: 'til_folder/20261012.md', parentId: 'til_folder', name: '20261012.md', type: 'FILE',
-        fileType: 'txt', defaultAppId: 'textPadApp',
+        fileType: 'md', defaultAppId: 'textPadApp',
         icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/20261012.md'
       },
 
