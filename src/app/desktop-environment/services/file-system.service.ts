@@ -5,6 +5,10 @@ import { map } from 'rxjs/operators';
 
 import { AppRegistryService } from "./app-registry.service";
 
+
+/**
+ * something like an inode table
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -23,18 +27,60 @@ export class FileSystemService {
 
   private initializeFileSystem(): void {
     const initialFs: FSObject[] = [
-      // Root Level / Drives (conceptual)
+      // /root
       { id: this.ROOT_ID, parentId: null, name: 'My Computer', type: 'FOLDER', icon: 'assets/images/fs-icons/computer.png' },
-      { id: 'drive_c', parentId: this.ROOT_ID, name: 'Local Disk (C:)', type: 'FOLDER', icon: 'assets/images/fs-icons/drive.png' },
+      // /root/C:
+      { id: 'c:', parentId: this.ROOT_ID, name: 'Local Disk (C:)', type: 'FOLDER', icon: 'assets/images/fs-icons/drive.png' },
 
-      // C: Drive Contents
-      { id: 'program_files', parentId: 'drive_c', name: 'Program Files', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
-      { id: 'users_folder', parentId: 'drive_c', name: 'Users', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
+      // /root/C:/Program Files
+      { id: 'program_files', parentId: 'c:', name: 'Program Files', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
+      // /root/C:/Users
+      { id: 'users_folder', parentId: 'c:', name: 'Users', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
 
-      // Users/You Folder
+      // /root/C:/Users/DefaultUser
       { id: 'user_user', parentId: 'users_folder', name: 'DefaultUser', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
+      // /root/C:/Users/DefaultUser/Desktop
       { id: this.DESKTOP_ID, parentId: 'user_user', name: 'Desktop', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
+      // /root/C:/Users/DefaultUser/Desktop/README_Alaap.txt
+      {
+        id: 'about_me_doc', parentId: this.DESKTOP_ID, name: 'README_Alaap.txt', type: 'FILE',
+        fileType: 'txt', defaultAppId: 'textPadApp',
+        icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/about-me.txt'
+      },
+      // /root/C:/Users/DefaultUser/Desktop/Contact.md
+      {
+        id: 'contact_doc', parentId: this.DESKTOP_ID, name: 'Contact.md', type: 'FILE',
+        fileType: 'md', defaultAppId: 'textPadApp',
+        icon: 'assets/images/fs-icons/file_md.png', contentPath: 'assets/file-data/contact.md'
+      },
+      // /root/C:/Users/DefaultUser/Documents
       { id: 'documents_folder', parentId: 'user_user', name: 'Documents', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
+      // /root/C:/Users/DefaultUser/Documents/TIL
+      { id: 'til_folder', parentId: 'documents_folder', name: 'TIL', type: 'FOLDER', icon: 'assets/images/fs-icons/folder.png' },
+      // /root/C:/Users/DefaultUser/Documents/TIL/202504.md
+      {
+        id: 'til_folder/202504.md', parentId: 'til_folder', name: '202504.md', type: 'FILE',
+        fileType: 'txt', defaultAppId: 'textPadApp',
+        icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/202504.md'
+      },
+      // /root/C:/Users/DefaultUser/Documents/TIL/20250519.md
+      {
+        id: 'til_folder/20250519.md', parentId: 'til_folder', name: '20250519.md', type: 'FILE',
+        fileType: 'txt', defaultAppId: 'textPadApp',
+        icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/20250519.md'
+      },
+      // /root/C:/Users/DefaultUser/Documents/TIL/20250606.md
+      {
+        id: 'til_folder/20250606.md', parentId: 'til_folder', name: '20250606.md', type: 'FILE',
+        fileType: 'txt', defaultAppId: 'textPadApp',
+        icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/20250606.md'
+      },
+      // /root/C:/Users/DefaultUser/Documents/TIL/20261012.md
+      {
+        id: 'til_folder/20261012.md', parentId: 'til_folder', name: '20261012.md', type: 'FILE',
+        fileType: 'txt', defaultAppId: 'textPadApp',
+        icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/TIL/20261012.md'
+      },
 
       // Desktop Contents
       // {
@@ -52,18 +98,6 @@ export class FileSystemService {
       //   fileType: 'txt', content: 'ReadMe text', defaultAppId: 'textPadApp',
       //   icon: 'assets/images/fs-icons/file_txt.png'
       // },
-
-      // Documents Contents
-      {
-        id: 'about_me_doc', parentId: this.DESKTOP_ID, name: 'README_Alaap.txt', type: 'FILE',
-        fileType: 'txt', defaultAppId: 'textPadApp',
-        icon: 'assets/images/fs-icons/file_txt.png', contentPath: 'assets/file-data/about-me.txt'
-      },
-      {
-        id: 'contact_doc', parentId: this.DESKTOP_ID, name: 'Contact.md', type: 'FILE',
-        fileType: 'md', defaultAppId: 'textPadApp',
-        icon: 'assets/images/fs-icons/file_md.png', contentPath: 'assets/file-data/contact.md'
-      },
 
       // Program Files / App Shortcuts (can also be used for a "Start Menu")
       // {
